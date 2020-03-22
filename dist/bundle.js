@@ -101,8 +101,8 @@ new _components_helloWorldButton_helloWorldButton_js__WEBPACK_IMPORTED_MODULE_0_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
 
 
 class HelloWorldButton {
@@ -434,7 +434,7 @@ module.exports = function (list, options) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".hello-world-button {\n  width: 150px;\n  height: 50px;\n  padding: 10px;\n}\n\n.hello-world-text {\n  color: orange;\n  font-size: 20px;\n}\n", ""]);
+exports.push([module.i, ".hello-world-button {\n  width: 150px;\n  height: 50px;\n  padding: 10px; }\n\n.hello-world-text {\n  color: orange;\n  font-size: 20px; }\n", ""]);
 // Exports
 module.exports = exports;
 

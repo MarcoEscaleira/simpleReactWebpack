@@ -1,0 +1,16 @@
+{
+  "name": "webpack-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "file-loader": "^6.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

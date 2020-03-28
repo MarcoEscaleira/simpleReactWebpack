@@ -1,16 +1,20 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "bundle.[contentHash].js",
+    filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./"
   },
   mode: "development",
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    index: 'index.html',
+    port: '8080'
+  },
   module: {
     rules: [
       {

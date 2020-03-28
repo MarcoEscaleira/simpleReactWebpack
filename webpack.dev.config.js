@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.hbs$/,
-        use: [ 'handlebars-loader' ]
+        use: [ "handlebars-loader" ]
       }
     ]
   },

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import './styles.scss';
 
 class Heading {
@@ -5,7 +6,7 @@ class Heading {
     const body = document.querySelector("body");
     const title = document.createElement("h1");
 
-    title.innerText = "Webpack is awesome";
+    title.innerText = _.upperFirst("webpack is awesome");
     title.classList.add("title");
     
     body.appendChild(title);

@@ -4,13 +4,18 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "bundle.[contentHash].js",
+    filename: "[name].[contentHash].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./"
   },
   mode: "production",
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
   module: {
     rules: [
       {
@@ -51,7 +56,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.[contentHash].css"
+      filename: "[name].[contentHash].css"
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

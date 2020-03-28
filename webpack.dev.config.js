@@ -5,15 +5,21 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "bundle.[hash].js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./"
+    publicPath: ""
   },
   mode: "development",
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
     index: 'index.html',
-    port: '8080'
+    port: '8080',
+    hot: true
   },
   module: {
     rules: [
@@ -56,6 +62,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: "./src/index.hbs"
     })
   ]

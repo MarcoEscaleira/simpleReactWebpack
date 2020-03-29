@@ -1,5 +1,4 @@
 # TODO
 
-1.  React startup
-2.  Check fonts being dynamic
-3.  Tests setup
+1.  Check fonts being dynamic
+2.  Tests setup

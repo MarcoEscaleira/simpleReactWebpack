@@ -1,7 +1,9 @@
-if (process.env.NODE_ENV === "production") {
-  console.log("Production mode");
-}
+import React from "react";
+import ReactDom from "react-dom";
 
-if (process.env.NODE_ENV === "development") {
-  console.log("development mode");
-}
+ReactDom.render(
+  <div>
+    <h1>React app</h1>
+  </div>,
+  document.getElementById("root")
+);

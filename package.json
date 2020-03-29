@@ -9,7 +9,8 @@
     "start:dev": "webpack-dev-server --config ./webpack.dev.config.js",
     "build": "webpack --config ./webpack.production.config.js",
     "start": "node src/server.js",
-    "lint": "eslint ."
+    "lint": "eslint . --fix",
+    "lint:prettier": "pretty-quick"
   },
   "dependencies": {
     "express": "^4.17.1",

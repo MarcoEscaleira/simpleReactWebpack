@@ -8,7 +8,8 @@
   "scripts": {
     "start:dev": "webpack-dev-server --config ./webpack.dev.config.js",
     "build": "webpack --config ./webpack.production.config.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -17,6 +18,8 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "file-loader": "^6.0.0",
     "handlebars": "^4.7.3",
     "handlebars-loader": "^1.7.1",

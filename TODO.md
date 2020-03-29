@@ -1,4 +1,5 @@
 # TODO
 
-1.  Check fonts being dynamic
-2.  Tests setup
+1. Splitting chunks
+2. Lazy load images
+3. Tests setup

@@ -8,13 +8,13 @@ module.exports = {
     filename: "[name].bundle.js",
     chunkFilename: "[name].chunk.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "",
+    publicPath: ""
   },
   mode: "development",
   optimization: {
     splitChunks: {
-      chunks: "all",
-    },
+      chunks: "all"
+    }
   },
   devtool: "cheap-module-eval-source-map",
   devServer: {
@@ -23,20 +23,21 @@ module.exports = {
     port: "8080",
     hot: true,
     stats: "minimal",
+    compress: true
   },
   module: {
     rules: [
       {
         test: /\.(png|jpg|jpeg)$/,
-        use: "file-loader",
+        use: "file-loader"
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(scss|sass)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.js$/,
@@ -45,21 +46,21 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/env", "@babel/preset-react"],
-            plugins: ["transform-class-properties"],
-          },
-        },
+            plugins: ["transform-class-properties"]
+          }
+        }
       },
       {
         test: /\.hbs$/,
-        use: ["handlebars-loader"],
-      },
-    ],
+        use: ["handlebars-loader"]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/index.hbs",
-    }),
-  ],
+      template: "./src/index.hbs"
+    })
+  ]
 };

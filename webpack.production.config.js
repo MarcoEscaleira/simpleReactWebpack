@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const DuplicatePackageCheckerWebpackPlugin = require("duplicate-package-checker-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   entry: "./src/index.js",
@@ -60,6 +61,9 @@ module.exports = {
       template: "./src/index.hbs"
     }),
     new ProgressBarPlugin(),
-    new DuplicatePackageCheckerWebpackPlugin()
+    new DuplicatePackageCheckerWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static"
+    })
   ]
 };

@@ -1,6 +1,5 @@
 # TODO
 
- 1. Source map eval
- 2. Improve HMR console logging 
- 3. Prettier and commit hooks
- 4. Check fonts being dynamic
+ 1. Improve HMR console logging 
+ 2. Prettier and commit hooks
+ 3. Check fonts being dynamic

@@ -15,6 +15,7 @@ module.exports = {
 			chunks: "all"
 		}
 	},
+	devtool: "cheap-module-eval-source-map",
 	devServer: {
 		contentBase: path.resolve(__dirname, "dist"),
 		index: "index.html",

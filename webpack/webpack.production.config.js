@@ -6,6 +6,9 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const DuplicatePackageCheckerWebpackPlugin = require("duplicate-package-checker-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
+// module loaders
+const loaders = require("./loaders");
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -21,37 +24,7 @@ module.exports = {
       minSize: 15000
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\.(png|jpg|jpeg)$/,
-        use: "file-loader"
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      },
-      {
-        test: /\.(scss|sass)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/env", "@babel/preset-react"],
-            plugins: ["transform-class-properties"]
-          }
-        }
-      },
-      {
-        test: /\.hbs$/,
-        use: ["handlebars-loader"]
-      }
-    ]
-  },
+  module: loaders("production"),
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].[contentHash].css"
@@ -63,7 +36,8 @@ module.exports = {
     new ProgressBarPlugin(),
     new DuplicatePackageCheckerWebpackPlugin(),
     new BundleAnalyzerPlugin({
-      analyzerMode: "static"
+      analyzerMode: "static",
+      openAnalyzer: false
     })
   ]
 };

@@ -6,8 +6,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start:dev": "webpack-dev-server --config ./webpack.dev.config.js",
-    "build": "webpack --config ./webpack.production.config.js",
+    "start:dev": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "build": "webpack --config ./webpack/webpack.production.config.js",
     "start": "node src/server.js",
     "lint": "eslint . --fix",
     "lint:prettier": "pretty-quick"

@@ -3,6 +3,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DuplicatePackageCheckerWebpackPlugin = require("duplicate-package-checker-webpack-plugin");
 
+// module loaders
+const loaders = require("./loaders");
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -26,37 +29,7 @@ module.exports = {
     stats: "minimal",
     compress: true
   },
-  module: {
-    rules: [
-      {
-        test: /\.(png|jpg|jpeg)$/,
-        use: "file-loader"
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
-      {
-        test: /\.(scss|sass)$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/env", "@babel/preset-react"],
-            plugins: ["transform-class-properties"]
-          }
-        }
-      },
-      {
-        test: /\.hbs$/,
-        use: ["handlebars-loader"]
-      }
-    ]
-  },
+  module: loaders("development"),
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

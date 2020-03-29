@@ -6,7 +6,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
 	entry: "./src/index.js",
 	output: {
-		filename: "[name].[contentHash].js",
+		filename: "[name].[contentHash].bundle.js",
+		chunkFilename: "[name].chunk.js",
 		path: path.resolve(__dirname, "dist"),
 		publicPath: "./static"
 	},
@@ -39,13 +40,13 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: [ "@babel/env" ],
-						plugins: [ "transform-class-properties" ]
+						presets: [ "@babel/env", "@babel/preset-react" ],
+						plugins: [ "transform-class-properties", "@babel/plugin-syntax-dynamic-import" ]
 					}
 				}
 			},

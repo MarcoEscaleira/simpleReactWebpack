@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
 	entry: "./src/index.js",
 	output: {
-		filename: "[name].js",
+		filename: "[name].bundle.js",
+		chunkFilename: "[name].chunk.js",
 		path: path.resolve(__dirname, "dist"),
 		publicPath: ""
 	},
@@ -20,7 +21,8 @@ module.exports = {
 		contentBase: path.resolve(__dirname, "dist"),
 		index: "index.html",
 		port: "8080",
-		hot: true
+		hot: true,
+		stats: "minimal"
 	},
 	module: {
 		rules: [
@@ -49,8 +51,8 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: [ "@babel/env" ],
-						plugins: [ "transform-class-properties" ]
+						presets: [ "@babel/env", "@babel/preset-react" ],
+						plugins: [ "transform-class-properties", "@babel/plugin-syntax-dynamic-import" ]
 					}
 				}
 			},

@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const DuplicatePackageCheckerWebpackPlugin = require("duplicate-package-checker-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -58,6 +59,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.hbs"
     }),
-    new ProgressBarPlugin()
+    new ProgressBarPlugin(),
+    new DuplicatePackageCheckerWebpackPlugin()
   ]
 };
